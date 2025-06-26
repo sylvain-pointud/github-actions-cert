@@ -1,0 +1,21 @@
+name: Continuous Integration
+
+on: 
+  push:
+    branches: 
+      - main
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  test:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run test suite
+        run: |
+          echo "Running tests..."
+          sleep 5 # Simulate running tests
+          exit 0
