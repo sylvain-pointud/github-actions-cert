@@ -28,3 +28,15 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # Run a script that tests the code
+      - name: Run tests
+        run: node -e "console.log('running from node!')"
