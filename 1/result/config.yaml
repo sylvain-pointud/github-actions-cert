@@ -1,0 +1,58 @@
+# The key components covered include:
+
+# Application Name: Highlighting that spaces in keys are valid without needing quotes.
+# Strings: Encouraging the habit of wrapping strings in double quotes, though it's not a syntax requirement.
+# Versioning: Recommending the use of floats to represent semantic versions.
+# Author and Description: Explaining that strings can optionally be wrapped in quotes.
+# Environment Settings: Describing the structure as a map of maps for both development and production environments.
+# Database Configuration: Outlining the database as a map containing type, host, port, username, and schema name.
+# Logging Configuration: Simple standard logging setup including log files.
+# Modules: Explained as a sequence of maps, each with 'name', 'enabled', and 'priority' keys.
+
+application name: "myapp"
+version: 1.0
+author: "your name"
+description: "a complex yaml exercise"
+
+environment settings:
+  development:
+    host: "localhost"
+    port: 3000
+    database:
+      type: "mysql"
+      host: "localhost"
+      port: 3306
+      username: "dev_user"
+      schema name: "development_schema"
+    logging configuration:
+      log file: "/var/log/dev.log"
+      log level: "debug"
+    modules:
+      - name: "module 1"
+        enabled: true
+        priority: 1
+      - name: "module 2"
+        enabled: false
+        priority: 2
+
+  production:
+    host: "production.example.com"
+    port: 80
+    database:
+      type: "postgresql"
+      host: "db.example.com"
+      port: 5432
+      username: "prod_user"
+      schema name: "production_schema"
+    logging configuration:
+      log file: "/var/log/prod.log"
+      log level: "info"
+    modules:
+      - name: "module 1"
+        enabled: true
+        priority: 1
+      - name: "module 2"
+        enabled: true
+        priority: 2
+
+
