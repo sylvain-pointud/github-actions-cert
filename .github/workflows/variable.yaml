@@ -10,6 +10,8 @@ jobs:
         - name: Prevent reruns
           run: |
             # Exit if the run number is greater than the maximum number of attempts
+            echo ${RUN_ATTEMPT_NUMBER} is the current run attempt number
+            echo ${MAXIMUM_ATTEMPTS} is the maximum number of attempts
             if [ $RUN_ATTEMPT_NUMBER -gt $MAXIMUM_ATTEMPTS ]; then
               echo "Exiting because the run number is greater than the maximum number of attempts"
               exit 1
