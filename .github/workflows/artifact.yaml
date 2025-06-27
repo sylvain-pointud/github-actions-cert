@@ -1,4 +1,4 @@
-name: "Lesson 3 - Exercise 2"
+name: Artifact
 
 on:
   workflow_dispatch:
