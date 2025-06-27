@@ -1,0 +1,10 @@
+name: use reusable
+
+on:
+  workflow_dispatch:
+
+jobs:
+  use-reusable:
+    uses: ./.github/workflows/reusable.yaml
+    with:
+      actor: "John Doe"
