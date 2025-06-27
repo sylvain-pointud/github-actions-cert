@@ -1,4 +1,4 @@
-name: "Lesson 4 - Exercise 1"
+name: Use GITHUB_STEP_SUMMARY
 
 on:
   workflow_dispatch:
