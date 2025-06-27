@@ -1,0 +1,26 @@
+name: "Lesson 4 - Exercise 1"
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch-api-data:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Save API response to a file
+        run: |
+          curl https://jsonplaceholder.typicode.com/posts/1 > response.json
+
+          # Count the number of words in the title and body
+          title_words_count=$(cat response.json | jq -r '.title' | wc -w | xargs)
+          body_words_count=$(cat response.json | jq -r '.body' | wc -w | xargs)
+
+          # Print the word count
+          echo "Title word count: $title_words_count"
+          echo "Body word count: $body_words_count"
+
+          ## Add your answer below this line
+
+          echo "## SUMMARY" >> $GITHUB_STEP_SUMMARY
+          echo "Title word count: $title_words_count" >> $GITHUB_STEP_SUMMARY
+          echo "Body word count: $body_words_count" >> $GITHUB_STEP_SUMMARY
