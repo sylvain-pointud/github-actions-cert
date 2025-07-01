@@ -1,0 +1,22 @@
+name: Matrix Workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  matrix-job:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        car: [mustang, viper]
+        color: [dark, light]
+        include:
+          - car: viper
+            color: light
+          - car: ferrari
+            color: red
+    steps:
+      - name: echo step
+        run: |
+          echo "Car: ${{ matrix.car }}"
+          echo "Color: ${{ matrix.color }}"
+        shell: bash
